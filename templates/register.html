@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page - Online Shopping Platform</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <section id="Booking" class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <h2>Register section</h2>
+            </div>
+            <form id="appointmentForm" class="needs-validation"  action="/submit" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="mail" placeholder="Enter your email" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                    <div class="invalid-feedback">Please select a date.</div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </section>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-success mt-3">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <button><a href="{{'/'}}">Back to main page</a></button>
+</body>
+</html>
